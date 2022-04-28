@@ -1,0 +1,10 @@
+
+*.pyc
+.coverage
+build/
+prof/
+dist/
+bin/
+lib/
+pyvenv.cfg
+django_bind_html.egg-info/

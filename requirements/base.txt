@@ -1,0 +1,3 @@
+bind-html>=1.0a2
+
+Django>=2.2
