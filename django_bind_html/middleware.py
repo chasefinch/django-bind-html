@@ -22,10 +22,10 @@ class HTMLBindingMiddleware(MiddlewareMixin):
             return response
 
         # Sniff for whether this response is a bound HTML view
-        should_bind = True
-
-        if not should_bind:
+        if response.get("Processing-Needed") != "bind":
             return response
+
+        del response["Processing-Needed"]
 
         parser = HTMLAttributeBinder()
         response_content = parser.apply(response_content)
