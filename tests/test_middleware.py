@@ -21,7 +21,7 @@ class TestMiddleware:
 
         response = MagicMock()
         response.has_header = MagicMock(return_value=True)
-        headers = {"Content-Type": "text/html"}
+        headers = {"Content-Type": "text/html", "Processing-Needed": "bind"}
         response.__getitem__.side_effect = headers.__getitem__
         self.response = response
 

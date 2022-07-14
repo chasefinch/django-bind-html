@@ -22,7 +22,7 @@ class HTMLBindingMiddleware(MiddlewareMixin):
             return response
 
         # Sniff for whether this response is a bound HTML view
-        if response.get("Processing-Needed") != "bind":
+        if not response.has_header("Processing-Needed") or response["Processing-Needed"] != "bind":
             return response
 
         del response["Processing-Needed"]
