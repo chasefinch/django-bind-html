@@ -8,10 +8,10 @@ with open("README.md", "r") as readme_file:
 
 setuptools.setup(
     name="django-bind-html",
-    version="1.0a6",
+    version="1.0a7",
     author="Chase Finch",
     author_email="chase@finch.email",
-    description="Declarative data binding for HTML attributes",
+    description="Declarative data binding for HTML",
     keywords=["Django", "Middleware", "HTML", "data binding"],
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -28,7 +28,7 @@ setuptools.setup(
     ],
     python_requires=">=3.6",
     install_requires=[
-        "bind-html>=1.0a2",
+        "bind-html>=1.0a5",
         "django>=2.2.0",
     ],
 )

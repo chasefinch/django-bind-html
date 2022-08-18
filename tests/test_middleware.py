@@ -33,22 +33,22 @@ class TestMiddleware:
         del self.response
         del self.middleware
 
-    @patch("django_bind_html.middleware.HTMLAttributeBinder")
-    def test_triggering(self, mock_html_attribute_binder):
+    @patch("django_bind_html.middleware.HTMLDataBinder")
+    def test_triggering(self, mock_binder):
         """Test #1."""
-        self._setup_binder(mock_html_attribute_binder)
+        self._setup_binder(mock_binder)
 
         self.response.content = TRIGGERING
 
         self.middleware.process_response(self.request, self.response)
 
-        assert mock_html_attribute_binder.called
+        assert mock_binder.called
         self.binder.apply.assert_called_once()
 
-    def _setup_binder(self, mock_html_attribute_binder):
+    def _setup_binder(self, mock_binder):
         self.binder = MagicMock()
         self.binder.apply = MagicMock(return_value="Yay! HTML!")
-        mock_html_attribute_binder.return_value = self.binder
+        mock_binder.return_value = self.binder
 
     def _get_response(self):
         pass

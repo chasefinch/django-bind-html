@@ -1,7 +1,7 @@
 """Define middleware for applying Bind HTML to the output of Django views."""
 
 # Third Party
-from bind_html import HTMLAttributeBinder
+from bind_html import HTMLDataBinder
 
 # Django
 from django.utils.deprecation import MiddlewareMixin
@@ -27,7 +27,7 @@ class HTMLBindingMiddleware(MiddlewareMixin):
 
         del response["Processing-Needed"]
 
-        parser = HTMLAttributeBinder()
+        parser = HTMLDataBinder()
         response_content = parser.apply(response_content)
 
         response.content = response_content
