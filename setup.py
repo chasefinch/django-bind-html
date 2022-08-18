@@ -28,7 +28,7 @@ setuptools.setup(
     ],
     python_requires=">=3.6",
     install_requires=[
-        "bind-html>=1.0a5",
+        "bind-html>=1.0a6",
         "django>=2.2.0",
     ],
 )
