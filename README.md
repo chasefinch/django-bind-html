@@ -1,6 +1,8 @@
+***This is an experimental project with no releases. Don’t use it yet.***
+
 # Django Bind HTML
 
-![Python 3.6+](https://img.shields.io/badge/python-3.6%2B-blue) [![CircleCI](https://circleci.com/gh/BringFido/django-bind-html/tree/main.svg?style=svg)](https://circleci.com/gh/BringFido/django-bind-html/tree/main)
+![Python 3.6+](https://img.shields.io/badge/python-3.6%2B-blue)
 
 Middleware for applying [Bind HTML](https://github.com/BringFido/bind-html) to the output of a request in Django.
 
